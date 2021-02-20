@@ -1,0 +1,40 @@
+{
+  "sourceType": "unambiguous",
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3.8",
+        "modules": false,
+        "bugfixes": true,
+        "debug": false,
+        "loose": false
+      }
+    ]
+  ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import",
+    [
+      "@babel/plugin-proposal-decorators",
+      {
+        "decoratorsBeforeExport": false,
+        "loose": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "@babel/transform-runtime",
+      {
+        "useESModules": true,
+        "corejs": false,
+        "helpers": true
+      }
+    ]
+  ]
+}
