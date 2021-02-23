@@ -8,7 +8,7 @@
   "scss": "package/assets/index.scss",
   "css": "package/index.css",
   "scripts": {
-    "prettier": "prettier '**/*.{scss, css, js}' --ignore-path ./.prettierignore --write",
+    "prettier": "prettier \"**/*.+(js|scss|css)\" --ignore-path ./.prettierignore --write",
     "lint": "eslint src/**/*.{js,ts}",
     "build:dev": "cross-env NODE_ENV=development node ./scripts/build",
     "build:prod": "cross-env NODE_ENV=production node ./scripts/build",
