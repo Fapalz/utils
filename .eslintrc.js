@@ -4,8 +4,14 @@ module.exports = {
     node: true,
     es6: true,
   },
-  extends: ['prettier', 'plugin:prettier/recommended'],
+  extends: ['airbnb-base', 'prettier', 'plugin:prettier/recommended'],
   plugins: ['prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'import/no-extraneous-dependencies': 'off',
+    'no-console': 'off',
+  },
+  parserOptions: {
+    sourceType: 'module',
+  },
 }
