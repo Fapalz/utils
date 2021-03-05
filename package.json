@@ -1,10 +1,9 @@
 {
   "name": "@fapalz/utils",
   "version": "1.0.0",
-  "description": "GitHub template for starting new projects",
+  "description": "Base utils",
   "main": "./package/index.js",
   "module": "./src/index.js",
-  "private": "false",
   "scss": "package/assets/index.scss",
   "css": "package/index.css",
   "scripts": {
