@@ -1,9 +1,9 @@
 {
-  "name": "library-starter",
+  "name": "@fapalz/utils",
   "version": "1.0.0",
   "description": "GitHub template for starting new projects",
   "main": "./package/index.js",
-  "module": "./package/index.es.js",
+  "module": "./src/index.js",
   "private": "false",
   "scss": "package/assets/index.scss",
   "css": "package/index.css",
@@ -18,9 +18,9 @@
   },
   "author": "Gladikov Kirill - Fapalz <blacesmot@gmail.com>",
   "bugs": {
-    "url": "https://github.com/Fapalz/library-starter/issues"
+    "url": "https://github.com/Fapalz/utils/issues"
   },
-  "homepage": "https://github.com/Fapalz/library-starter#readme",
+  "homepage": "https://github.com/Fapalz/utils#readme",
   "lint-staged": {
     "*.{scss, css}": "stylelint",
     "*.{js, ts}": [
