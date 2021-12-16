@@ -1,6 +1,6 @@
 {
   "name": "@fapalz/utils",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Base utils",
   "main": "./package/index.js",
   "module": "./src/index.js",

@@ -1,13 +1,13 @@
 /**
- * MyLibrary  1.0.0
- * GitHub template for starting new projects
+ * MyLibrary  1.0.1
+ * Base utils
  * https://github.com/Fapalz/utils#readme
  *
  * Copyright 2020-2021 Gladikov Kirill - Fapalz <blacesmot@gmail.com>
  *
  * Released under the MIT License
  *
- * Released on: March 5, 2021
+ * Released on: December 16, 2021
  */
 
 var inBrowser = typeof window !== 'undefined';
@@ -41,6 +41,11 @@ var env = /*#__PURE__*/Object.freeze({
   isFF: isFF
 });
 
+/**
+ * Returns a random string of given length
+ * @param {number} i Characters
+ * @returns {string}
+ */
 var randomString = function randomString(i) {
   var rnd = '';
 
@@ -80,14 +85,47 @@ var throttle = function throttle(fn, threshhold, scope) {
     }
   };
 };
+/**
+ * Return capitalize string
+ * @param {string} string
+ * @returns {string}
+ */
 
-var capitalize = function capitalize(s) {
-  if (typeof s !== 'string') return '';
-  return s.charAt(0).toUpperCase() + s.slice(1);
+
+var capitalize = function capitalize(string) {
+  if (typeof string !== 'string') return '';
+  return string.charAt(0).toUpperCase() + string.slice(1);
 };
+/**
+ * Returns the element is HTMLElement or not
+ * @param {HTMLElement} el
+ * @returns {Boolean}
+ */
 
-var isDomElement = function isDomElement(obj) {
-  return !!(obj && obj.nodeType === 1);
+
+var isDomElement = function isDomElement(el) {
+  return !!(el && el.nodeType === 1);
+};
+/**
+ * Returns the element is visible on the viewport or not
+ * @param {HTMLElement} el
+ * @returns {Boolean}
+ */
+
+
+var isElementVisible = function isElementVisible(el) {
+  var rect = el.getBoundingClientRect();
+  var windowWidth = window.innerWidth || document.documentElement.clientWidth;
+  var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+
+  var efp = function efp(x, y) {
+    return document.elementFromPoint(x, y);
+  }; // Return false if it's not in the viewport
+
+
+  if (rect.right < 0 || rect.bottom < 0 || rect.left > windowWidth || rect.top > windowHeight) return false; // Return true if any of its four corners are visible
+
+  return el.contains(efp(rect.left, rect.top)) || el.contains(efp(rect.right, rect.top)) || el.contains(efp(rect.right, rect.bottom)) || el.contains(efp(rect.left, rect.bottom));
 };
 
 var main = /*#__PURE__*/Object.freeze({
@@ -95,7 +133,8 @@ var main = /*#__PURE__*/Object.freeze({
   randomString: randomString,
   throttle: throttle,
   capitalize: capitalize,
-  isDomElement: isDomElement
+  isDomElement: isDomElement,
+  isElementVisible: isElementVisible
 });
 
 /* eslint-disable import/no-mutable-exports */
